@@ -10,4 +10,6 @@ public interface AccountService {
     void withdraw(int amount);
 
     List<Operation> getStatement();
+
+    String printStatement();
 }

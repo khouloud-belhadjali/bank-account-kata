@@ -35,4 +35,9 @@ public class AccountController {
     public List<Operation> statement() {
         return service.getStatement();
     }
+
+    @GetMapping("/statement/print")
+    public String printStatement() {
+        return service.printStatement();
+    }
 }

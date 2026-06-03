@@ -31,4 +31,23 @@ public class AccountServiceImpl implements AccountService {
     public List<Operation> getStatement() {
         return operations;
     }
+
+    @Override
+    public String printStatement() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("DATE | OPERATION | AMOUNT | BALANCE\n");
+
+        for (Operation op : operations) {
+            sb.append(op.getDate())
+                    .append(" | ")
+                    .append(op.getType())
+                    .append(" | ")
+                    .append(op.getAmount())
+                    .append(" | ")
+                    .append(op.getBalanceAfterOperation())
+                    .append("\n");
+        }
+
+        return sb.toString();
+    }
 }
